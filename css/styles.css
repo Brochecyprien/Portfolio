@@ -250,3 +250,38 @@ footer {
 .dark-mode .contact-item {
     background-color: #1f1f1f;
 }
+.formation {
+    background-color: #222;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.formation img {
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.formation h3 {
+    margin: 0;
+    color: #fbd296;
+}
+
+.formation p {
+    margin: 5px 0;
+}
+
+.formation .btn {
+    margin-left: auto;
+}
+
+.formation:hover {
+    transform: scale(1.05);
+}
