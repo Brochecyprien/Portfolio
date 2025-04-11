@@ -344,3 +344,119 @@ footer {
         align-self: flex-end;
     }
 }
+/* -------- TIMELINE -------- */
+
+#timeline h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #fbd296;
+  }
+  
+  .timeline-intro {
+    font-style: italic;
+    margin-bottom: 40px;
+    color: #ccc;
+  }
+  
+  /* Container */
+  .timeline-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  /* Colonnes */
+  .timeline-column {
+    flex: 1 1 450px;
+    max-width: 600px;
+  }
+  
+  /* Titres de section */
+  .timeline-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fbd296;
+    border-bottom: 2px solid #fbd296;
+    padding-bottom: 5px;
+  }
+  
+  /* Timeline Item */
+  .timeline-item {
+    background-color: #222;
+    position: relative;
+    padding: 20px 20px 20px 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border-left: 4px solid #fbd296;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .timeline-item:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Pastille */
+  .timeline-point {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #fbd296;
+    border-radius: 50%;
+    left: -10px;
+    top: 24px;
+  }
+  
+  /* Dates */
+  .timeline-date {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 5px 10px;
+    background-color: #444;
+    color: white;
+    font-size: 13px;
+    border-radius: 5px;
+  }
+  
+  /* Boutons */
+  .btn-group {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .btn-group .btn {
+    background-color: #4285f4;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-group .btn:hover {
+    background-color: #3367d6;
+  }
+  
+  /* Liens dans textes */
+  .timeline-item a {
+    color: #fbd296;
+    text-decoration: underline;
+  }
+  
+  .timeline-item a:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .timeline-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
