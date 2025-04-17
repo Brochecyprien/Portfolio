@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-    
+
     window.addEventListener("scroll", revealSections);
     revealSections(); // Pour les sections visibles dès le départ
 
@@ -44,20 +44,31 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error("Erreur lors du chargement des projets GitHub :", error));
 
-    // Mode sombre
+    // Mode sombre / clair avec texte dynamique
     const toggleDarkMode = document.createElement("button");
-    toggleDarkMode.textContent = "Mode Sombre";
     toggleDarkMode.classList.add("dark-mode-toggle");
     document.body.appendChild(toggleDarkMode);
 
+    function updateToggleText() {
+        if (document.body.classList.contains("dark-mode")) {
+            toggleDarkMode.textContent = "Mode Clair ☀️";
+        } else {
+            toggleDarkMode.textContent = "Mode Sombre 🌙";
+        }
+    }
+
+    // Initialiser le texte
+    updateToggleText();
+
     toggleDarkMode.addEventListener("click", function () {
         document.body.classList.toggle("dark-mode");
+        updateToggleText();
     });
 
     // Menu Burger
     const menuToggle = document.getElementById("mobile-menu");
     const navList = document.querySelector(".nav-list");
-    
+
     menuToggle.addEventListener("click", function () {
         navList.classList.toggle("active");
     });
