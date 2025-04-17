@@ -1,4 +1,4 @@
-/* Styles généraux */
+/* ======================== STYLES GÉNÉRAUX ======================== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,7 +8,7 @@ body {
     text-align: center;
 }
 
-/* Navigation */
+/* ======================== NAVIGATION & MENU BURGER ======================== */
 nav {
     background-color: #000;
     padding: 15px;
@@ -44,7 +44,6 @@ nav {
     color: #fbd296;
 }
 
-/* Menu burger */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -59,6 +58,7 @@ nav {
     transition: 0.3s;
 }
 
+/* Responsive Navigation */
 @media screen and (max-width: 768px) {
     nav {
         justify-content: space-between;
@@ -76,24 +76,21 @@ nav {
         text-align: center;
         padding: 10px 0;
     }
-
     .nav-list.active {
         display: flex;
     }
-
     .menu-toggle {
         display: flex;
     }
 }
 
-/* Sections */
+/* ======================== SECTIONS & ACCUEIL ======================== */
 .section {
     padding: 100px 20px;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
 .section.visible {
     opacity: 1;
     transform: translateY(0);
@@ -115,12 +112,12 @@ nav {
     color: #fbd296;
     margin: 0;
 }
-
 #accueil h2 {
     font-size: 25px;
     margin: 10px 0;
 }
 
+/* ======================== BOUTONS & DARK MODE ======================== */
 .btn {
     background-color: #fbd296;
     color: #000;
@@ -131,110 +128,28 @@ nav {
     margin-top: 20px;
     display: inline-block;
 }
-
 .btn:hover {
     background-color: #e0a874;
 }
-
-
-
-/* Projets */
-.project {
-    background-color: #333;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    border-radius: 10px;
-}
-
-/* Compétences */
-.competences-container {
+.btn-group {
+    margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    gap: 10px;
 }
-
-.competence {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #222;
-    padding: 15px;
-    border-radius: 10px;
-    width: 120px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out;
-}
-
-.competence img {
-    width: 50px;
-    height: auto;
-}
-
-.competence span {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #fff;
-}
-
-.competence:hover {
-    transform: scale(1.1);
-}
-
-/* Contact */
-.contact-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 20px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    background-color: #222;
-    padding: 15px;
-    border-radius: 10px;
-    width: 250px;
-    justify-content: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out;
-}
-
-.contact-item i {
-    font-size: 20px;
-    margin-right: 10px;
-    color: #fbd296;
-}
-
-.contact-item span {
-    font-weight: bold;
-    color: #fff;
-}
-
-.contact-item a {
+.btn-group .btn {
+    background-color: #4285f4;
+    color: white;
+    padding: 10px 15px;
     text-decoration: none;
-    color: #fbd296;
+    border-radius: 8px;
     font-weight: bold;
-    margin-left: 5px;
+    transition: background-color 0.3s ease;
+}
+.btn-group .btn:hover {
+    background-color: #3367d6;
 }
 
-.contact-item:hover {
-    transform: scale(1.1);
-}
-
-/* Footer */
-footer {
-    background-color: #000;
-    padding: 15px;
-    margin-top: 20px;
-}
-
-/* Dark mode */
 .dark-mode-toggle {
     position: fixed;
     bottom: 20px;
@@ -249,16 +164,13 @@ footer {
     z-index: 1001;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
-
 .dark-mode-toggle:hover {
     background-color: #e0a874;
 }
-
 .dark-mode {
     background-color: #121212;
     color: #e0e0e0;
 }
-
 .dark-mode .section,
 .dark-mode .project,
 .dark-mode .competence,
@@ -266,7 +178,94 @@ footer {
     background-color: #1f1f1f;
 }
 
-/* Formation CNIL */
+/* ======================== PROJETS ======================== */
+.project {
+    background-color: #333;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+}
+
+/* ======================== COMPÉTENCES ======================== */
+.competences-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.competence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    width: 120px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+.competence img {
+    width: 50px;
+    height: auto;
+}
+.competence span {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+.competence:hover {
+    transform: scale(1.1);
+}
+
+/* ======================== CONTACT ======================== */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+.contact-item i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #fbd296;
+}
+.contact-item span {
+    font-weight: bold;
+    color: #fff;
+}
+.contact-item a {
+    text-decoration: none;
+    color: #fbd296;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.contact-item:hover {
+    transform: scale(1.1);
+}
+
+/* ======================== FOOTER ======================== */
+footer {
+    background-color: #000;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* ======================== FORMATION / CERTIFICATION (CARTE) ======================== */
 .formation {
     background-color: #222;
     padding: 20px;
@@ -278,31 +277,25 @@ footer {
     transition: transform 0.3s ease-in-out;
     max-width: 700px;
 }
-
 .formation img {
     width: 100px;
     margin: 0 auto 15px auto;
     display: block;
 }
-
 .formation h3 {
     color: #fbd296;
     text-align: center;
     margin-bottom: 10px;
 }
-
 .formation p {
     margin: 5px 0 20px 0;
     text-align: center;
 }
-
-/* Liste des modules */
 .modules {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
 .modules li {
     display: flex;
     justify-content: space-between;
@@ -314,13 +307,11 @@ footer {
     padding: 10px 15px;
     border-radius: 8px;
 }
-
 .modules li strong {
     min-width: 160px;
     display: inline-block;
     color: #fff;
 }
-
 .modules a.btn {
     background-color: #fbd296;
     color: #000;
@@ -331,60 +322,52 @@ footer {
     transition: background-color 0.3s;
     white-space: nowrap;
 }
-
 .modules a.btn:hover {
     background-color: #e0b66c;
 }
-
 @media screen and (max-width: 600px) {
     .modules li {
         flex-direction: column;
         align-items: flex-start;
     }
-
     .modules a.btn {
         align-self: flex-end;
     }
 }
-/* -------- TIMELINE -------- */
 
+/* ======================== TIMELINE - PARCOURS / EXP. PRO ======================== */
 #timeline h2 {
     font-size: 32px;
     margin-bottom: 10px;
     color: #fbd296;
-  }
-  
-  .timeline-intro {
+}
+.timeline-intro {
     font-style: italic;
     margin-bottom: 40px;
     color: #ccc;
-  }
-  
-  /* Container */
-  .timeline-grid {
+}
+/* Container */
+.timeline-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
-  }
-  
-  /* Colonnes */
-  .timeline-column {
+}
+/* Colonnes */
+.timeline-column {
     flex: 1 1 450px;
     max-width: 600px;
-  }
-  
-  /* Titres de section */
-  .timeline-title {
+}
+/* Titres de section */
+.timeline-title {
     font-size: 24px;
     margin-bottom: 20px;
     color: #fbd296;
     border-bottom: 2px solid #fbd296;
     padding-bottom: 5px;
-  }
-  
-  /* Timeline Item */
-  .timeline-item {
+}
+/* Timeline Item */
+.timeline-item {
     background-color: #222;
     position: relative;
     padding: 20px 20px 20px 30px;
@@ -393,14 +376,12 @@ footer {
     border-left: 4px solid #fbd296;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
-  }
-  
-  .timeline-item:hover {
+}
+.timeline-item:hover {
     transform: scale(1.02);
-  }
-  
-  /* Pastille */
-  .timeline-point {
+}
+/* Pastille */
+.timeline-point {
     position: absolute;
     width: 14px;
     height: 14px;
@@ -408,10 +389,9 @@ footer {
     border-radius: 50%;
     left: -10px;
     top: 24px;
-  }
-  
-  /* Dates */
-  .timeline-date {
+}
+/* Dates */
+.timeline-date {
     display: inline-block;
     margin: 10px 0;
     padding: 5px 10px;
@@ -419,50 +399,25 @@ footer {
     color: white;
     font-size: 13px;
     border-radius: 5px;
-  }
-  
-  /* Boutons */
-  .btn-group {
-    margin-top: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .btn-group .btn {
-    background-color: #4285f4;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-group .btn:hover {
-    background-color: #3367d6;
-  }
-  
-  /* Liens dans textes */
-  .timeline-item a {
+}
+/* Liens dans textes */
+.timeline-item a {
     color: #fbd296;
     text-decoration: underline;
-  }
-  
-  .timeline-item a:hover {
+}
+.timeline-item a:hover {
     text-decoration: none;
     color: #fff;
-  }
-  
-  /* Responsive */
-  @media screen and (max-width: 768px) {
+}
+/* Responsive Timeline */
+@media screen and (max-width: 768px) {
     .timeline-grid {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-  }
-  /* ----- CARTE BTS SIO ----- */
+}
 
+/* ======================== CARTE BTS SIO ======================== */
 .card-bts {
     background-color: #222;
     padding: 30px;
@@ -471,26 +426,57 @@ footer {
     margin: 0 auto;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     text-align: left;
-  }
-  
-  .card-bts h2, .card-bts h3 {
+}
+.card-bts h2, .card-bts h3 {
     color: #fbd296;
     margin-bottom: 15px;
-  }
-  
-  .card-bts p {
+}
+.card-bts p {
     line-height: 1.6;
     margin-bottom: 20px;
     color: #ddd;
-  }
-  
-  .bts-options {
+}
+.bts-options {
     list-style-type: disc;
     padding-left: 20px;
     color: #ccc;
-  }
-  
-  .bts-options li {
+}
+.bts-options li {
     margin-bottom: 10px;
-  }
-  
+}
+
+/* ======================== À PROPOS (PHOTO + TEXTE) ======================== */
+.about-card {
+    background-color: #222;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    flex-wrap: wrap;
+}
+.about-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 4px solid #fbd296;
+    box-shadow: 0 0 12px rgba(251, 210, 150, 0.6);
+}
+.about-content {
+    max-width: 600px;
+    text-align: left;
+}
+.about-content h2 {
+    color: #fbd296;
+    margin-bottom: 10px;
+}
+.about-content p {
+    color: #ddd;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
