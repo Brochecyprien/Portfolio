@@ -128,15 +128,18 @@ nav {
     margin-top: 20px;
     display: inline-block;
 }
+
 .btn:hover {
     background-color: #e0a874;
 }
+
 .btn-group {
     margin-top: 15px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
+
 .btn-group .btn {
     background-color: #4285f4;
     color: white;
@@ -146,10 +149,12 @@ nav {
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
+
 .btn-group .btn:hover {
     background-color: #3367d6;
 }
 
+/* Bouton bascule */
 .dark-mode-toggle {
     position: fixed;
     bottom: 20px;
@@ -164,19 +169,74 @@ nav {
     z-index: 1001;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
+
 .dark-mode-toggle:hover {
     background-color: #e0a874;
 }
+
+/* ======================== MODE SOMBRE ======================== */
 .dark-mode {
     background-color: #121212;
     color: #e0e0e0;
 }
+
 .dark-mode .section,
 .dark-mode .project,
 .dark-mode .competence,
 .dark-mode .contact-item {
     background-color: #1f1f1f;
 }
+
+/* ======================== MODE CLAIR ======================== */
+body:not(.dark-mode) {
+    background-color: #fefefe;
+    color: #111;
+}
+
+body:not(.dark-mode) .section,
+body:not(.dark-mode) .project,
+body:not(.dark-mode) .competence,
+body:not(.dark-mode) .contact-item {
+    background-color: #ffffff;
+    color: #111;
+}
+
+body:not(.dark-mode) .btn {
+    background-color: #000;
+    color: #fff;
+}
+
+body:not(.dark-mode) .btn:hover {
+    background-color: #333;
+}
+
+body:not(.dark-mode) .btn-group .btn {
+    background-color: #222;
+    color: #fff;
+}
+
+body:not(.dark-mode) .btn-group .btn:hover {
+    background-color: #444;
+}
+
+body:not(.dark-mode) .dark-mode-toggle {
+    background-color: #000;
+    color: #fff;
+}
+
+body:not(.dark-mode) .dark-mode-toggle:hover {
+    background-color: #333;
+}
+
+body:not(.dark-mode) .timeline-item,
+body:not(.dark-mode) .formation,
+body:not(.dark-mode) .about-card,
+body:not(.dark-mode) .card-bts {
+    background-color: #f3f3f3;
+    color: #000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 
 /* ======================== PROJETS ======================== */
 .project {
