@@ -6,11 +6,7 @@ body {
     background-color: #1a1a1a;
     color: #fff;
     text-align: center;
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    transition: color 0.5s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* ======================== NAVIGATION & MENU BURGER ======================== */
@@ -25,7 +21,6 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.5s ease;
 }
 
 .nav-list {
@@ -44,7 +39,6 @@ nav {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-    transition: color 0.5s ease;
 }
 
 .nav-list li a:hover {
@@ -65,11 +59,13 @@ nav {
     transition: 0.3s;
 }
 
+/* Responsive Navigation */
 @media screen and (max-width: 768px) {
     nav {
         justify-content: space-between;
         padding: 10px 20px;
     }
+
     .nav-list {
         display: none;
         flex-direction: column;
@@ -89,22 +85,22 @@ nav {
     }
 }
 
-/* ======================== SECTIONS ======================== */
+/* ======================== SECTIONS & ACCUEIL ======================== */
 .section {
     padding: 100px 20px;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out, background-color 0.5s ease, color 0.5s ease;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 .section.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* ======================== ACCUEIL ======================== */
 #accueil {
     position: relative;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 70%, #1a1a1a 100%), url('../img/background.jpg') no-repeat center/cover;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, #1a1a1a 100%),
+                url('../img/background.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -117,13 +113,12 @@ nav {
     color: #fbd296;
     margin: 0;
 }
-
 #accueil h2 {
     font-size: 25px;
     margin: 10px 0;
 }
 
-/* ======================== BOUTONS ======================== */
+/* ======================== BOUTONS & DARK MODE ======================== */
 .btn {
     background-color: #fbd296;
     color: #000;
@@ -133,7 +128,6 @@ nav {
     font-weight: bold;
     margin-top: 20px;
     display: inline-block;
-    transition: background-color 0.3s ease;
 }
 
 .btn:hover {
@@ -149,8 +143,9 @@ nav {
 
 .btn-group .btn {
     background-color: #4285f4;
-    color: #fff;
+    color: white;
     padding: 10px 15px;
+    text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
     transition: background-color 0.3s ease;
@@ -160,7 +155,7 @@ nav {
     background-color: #3367d6;
 }
 
-/* ======================== DARK MODE TOGGLE ======================== */
+/* Bouton bascule */
 .dark-mode-toggle {
     position: fixed;
     bottom: 20px;
@@ -174,10 +169,13 @@ nav {
     cursor: pointer;
     z-index: 1001;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ======================== DARK MODE ======================== */
+.dark-mode-toggle:hover {
+    background-color: #e0a874;
+}
+
+/* ======================== MODE SOMBRE ======================== */
 .dark-mode {
     background-color: #121212;
     color: #e0e0e0;
@@ -186,24 +184,11 @@ nav {
 .dark-mode .section,
 .dark-mode .project,
 .dark-mode .competence,
-.dark-mode .contact-item,
-.dark-mode .formation,
-.dark-mode .timeline-item,
-.dark-mode .about-card,
-.dark-mode .card-bts {
+.dark-mode .contact-item {
     background-color: #1f1f1f;
-    color: #e0e0e0;
 }
 
-.dark-mode nav {
-    background-color: #000;
-}
-
-.dark-mode .nav-list li a {
-    color: #fff;
-}
-
-/* ======================== LIGHT MODE ======================== */
+/* ======================== MODE CLAIR ======================== */
 body:not(.dark-mode) {
     background-color: #ffffff;
     color: #111111;
@@ -212,32 +197,14 @@ body:not(.dark-mode) {
 body:not(.dark-mode) .section,
 body:not(.dark-mode) .project,
 body:not(.dark-mode) .competence,
-body:not(.dark-mode) .contact-item,
-body:not(.dark-mode) .formation,
-body:not(.dark-mode) .timeline-item,
-body:not(.dark-mode) .about-card,
-body:not(.dark-mode) .card-bts {
-    background-color: #f9f9f9;
+body:not(.dark-mode) .contact-item {
+    background-color: #ffffff;
     color: #111111;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-body:not(.dark-mode) nav {
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-}
-
-body:not(.dark-mode) .nav-list li a {
-    color: #111;
-}
-
-body:not(.dark-mode) .nav-list li a:hover {
-    color: #fbd296;
 }
 
 body:not(.dark-mode) .btn {
     background-color: #fbd296;
-    color: #000;
+    color: #000000;
 }
 
 body:not(.dark-mode) .btn:hover {
@@ -246,7 +213,7 @@ body:not(.dark-mode) .btn:hover {
 
 body:not(.dark-mode) .btn-group .btn {
     background-color: #4285f4;
-    color: #fff;
+    color: #ffffff;
 }
 
 body:not(.dark-mode) .btn-group .btn:hover {
@@ -254,56 +221,339 @@ body:not(.dark-mode) .btn-group .btn:hover {
 }
 
 body:not(.dark-mode) .dark-mode-toggle {
-    background-color: #000;
-    color: #fff;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 body:not(.dark-mode) .dark-mode-toggle:hover {
-    background-color: #333;
+    background-color: #333333;
 }
 
-/* ======================== AUTRES ÉLÉMENTS ======================== */
+body:not(.dark-mode) .timeline-item,
+body:not(.dark-mode) .formation,
+body:not(.dark-mode) .about-card,
+body:not(.dark-mode) .card-bts {
+    background-color: #f9f9f9;
+    color: #111111;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.dark-mode) .timeline-date {
+    background-color: #dddddd;
+    color: #000000;
+}
+
+body:not(.dark-mode) .modules li {
+    background-color: #eeeeee;
+}
+
+body:not(.dark-mode) .modules li strong {
+    color: #000000;
+}
+/* ======================== Transition douce entre modes sombre/claire ======================== */
+body, .section, .project, .competence, .contact-item, .formation, .timeline-item, .about-card, .card-bts, nav {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* ======================== PROJETS ======================== */
 .project {
+    background-color: #333;
     padding: 20px;
     margin: 20px auto;
     width: 80%;
     border-radius: 10px;
 }
 
+/* ======================== COMPÉTENCES ======================== */
+.competences-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
 .competence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
     padding: 15px;
     border-radius: 10px;
     width: 120px;
-    background-color: #222;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
 }
-
+.competence img {
+    width: 50px;
+    height: auto;
+}
+.competence span {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #fff;
+}
 .competence:hover {
     transform: scale(1.1);
 }
 
+/* ======================== CONTACT ======================== */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+}
 .contact-item {
+    display: flex;
+    align-items: center;
     background-color: #222;
     padding: 15px;
     border-radius: 10px;
     width: 250px;
-    display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
 }
-
+.contact-item i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #fbd296;
+}
+.contact-item span {
+    font-weight: bold;
+    color: #fff;
+}
+.contact-item a {
+    text-decoration: none;
+    color: #fbd296;
+    font-weight: bold;
+    margin-left: 5px;
+}
 .contact-item:hover {
     transform: scale(1.1);
 }
 
+/* ======================== FOOTER ======================== */
 footer {
     background-color: #000;
     padding: 15px;
     margin-top: 20px;
+}
+
+/* ======================== FORMATION / CERTIFICATION (CARTE) ======================== */
+.formation {
+    background-color: #222;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    max-width: 700px;
+}
+.formation img {
+    width: 100px;
+    margin: 0 auto 15px auto;
+    display: block;
+}
+.formation h3 {
+    color: #fbd296;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.formation p {
+    margin: 5px 0 20px 0;
+    text-align: center;
+}
+.modules {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.modules li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
+    flex-wrap: wrap;
+    background-color: #1a1a1a;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+.modules li strong {
+    min-width: 160px;
+    display: inline-block;
     color: #fff;
-    font-size: 14px;
+}
+.modules a.btn {
+    background-color: #fbd296;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+.modules a.btn:hover {
+    background-color: #e0b66c;
+}
+@media screen and (max-width: 600px) {
+    .modules li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .modules a.btn {
+        align-self: flex-end;
+    }
+}
+
+/* ======================== TIMELINE - PARCOURS / EXP. PRO ======================== */
+#timeline h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #fbd296;
+}
+.timeline-intro {
+    font-style: italic;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+/* Container */
+.timeline-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+/* Colonnes */
+.timeline-column {
+    flex: 1 1 450px;
+    max-width: 600px;
+}
+/* Titres de section */
+.timeline-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fbd296;
+    border-bottom: 2px solid #fbd296;
+    padding-bottom: 5px;
+}
+/* Timeline Item */
+.timeline-item {
+    background-color: #222;
+    position: relative;
+    padding: 20px 20px 20px 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border-left: 4px solid #fbd296;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+.timeline-item:hover {
+    transform: scale(1.02);
+}
+/* Pastille */
+.timeline-point {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: #fbd296;
+    border-radius: 50%;
+    left: -10px;
+    top: 24px;
+}
+/* Dates */
+.timeline-date {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 5px 10px;
+    background-color: #444;
+    color: white;
+    font-size: 13px;
+    border-radius: 5px;
+}
+/* Liens dans textes */
+.timeline-item a {
+    color: #fbd296;
+    text-decoration: underline;
+}
+.timeline-item a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+/* Responsive Timeline */
+@media screen and (max-width: 768px) {
+    .timeline-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ======================== CARTE BTS SIO ======================== */
+.card-bts {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: left;
+}
+.card-bts h2, .card-bts h3 {
+    color: #fbd296;
+    margin-bottom: 15px;
+}
+.card-bts p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+.bts-options {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #ccc;
+}
+.bts-options li {
+    margin-bottom: 10px;
+}
+
+/* ======================== À PROPOS (PHOTO + TEXTE) ======================== */
+.about-card {
+    background-color: #222;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    flex-wrap: wrap;
+}
+.about-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 4px solid #fbd296;
+    box-shadow: 0 0 12px rgba(251, 210, 150, 0.6);
+}
+.about-content {
+    max-width: 600px;
+    text-align: left;
+}
+.about-content h2 {
+    color: #fbd296;
+    margin-bottom: 10px;
+}
+.about-content p {
+    color: #ddd;
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
