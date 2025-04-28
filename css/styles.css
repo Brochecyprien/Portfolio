@@ -190,8 +190,8 @@ nav {
 
 /* ======================== MODE CLAIR ======================== */
 body:not(.dark-mode) {
-    background-color: #fefefe;
-    color: #111;
+    background-color: #ffffff;
+    color: #111111;
 }
 
 body:not(.dark-mode) .section,
@@ -199,45 +199,61 @@ body:not(.dark-mode) .project,
 body:not(.dark-mode) .competence,
 body:not(.dark-mode) .contact-item {
     background-color: #ffffff;
-    color: #111;
+    color: #111111;
 }
 
 body:not(.dark-mode) .btn {
-    background-color: #000;
-    color: #fff;
+    background-color: #fbd296;
+    color: #000000;
 }
 
 body:not(.dark-mode) .btn:hover {
-    background-color: #333;
+    background-color: #e0a874;
 }
 
 body:not(.dark-mode) .btn-group .btn {
-    background-color: #222;
-    color: #fff;
+    background-color: #4285f4;
+    color: #ffffff;
 }
 
 body:not(.dark-mode) .btn-group .btn:hover {
-    background-color: #444;
+    background-color: #3367d6;
 }
 
 body:not(.dark-mode) .dark-mode-toggle {
-    background-color: #000;
-    color: #fff;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 body:not(.dark-mode) .dark-mode-toggle:hover {
-    background-color: #333;
+    background-color: #333333;
 }
 
 body:not(.dark-mode) .timeline-item,
 body:not(.dark-mode) .formation,
 body:not(.dark-mode) .about-card,
 body:not(.dark-mode) .card-bts {
-    background-color: #f3f3f3;
-    color: #000;
+    background-color: #f9f9f9;
+    color: #111111;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+body:not(.dark-mode) .timeline-date {
+    background-color: #dddddd;
+    color: #000000;
+}
+
+body:not(.dark-mode) .modules li {
+    background-color: #eeeeee;
+}
+
+body:not(.dark-mode) .modules li strong {
+    color: #000000;
+}
+/* ======================== Transition douce entre modes sombre/claire ======================== */
+body, .section, .project, .competence, .contact-item, .formation, .timeline-item, .about-card, .card-bts, nav {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
 
 /* ======================== PROJETS ======================== */
 .project {
