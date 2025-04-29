@@ -239,7 +239,7 @@ body:not(.dark-mode) .card-bts {
 }
 
 body:not(.dark-mode) .timeline-date {
-    background-color: #8d8d8d;
+    background-color: #dddddd;
     color: #000000;
 }
 
