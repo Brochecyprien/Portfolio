@@ -632,3 +632,43 @@ footer {
     padding: 8px 12px;
     font-size: 14px;
 }
+
+/* ======================== VEILLE TECHNOLOGIQUE ======================== */
+.veille-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #222;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.veille-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #fbd296;
+}
+
+.veille-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Mode clair */
+body:not(.dark-mode) .veille-content {
+    background-color: #f9f9f9;
+    color: #111;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body:not(.dark-mode) .veille-content h3 {
+    color: #d27b00;
+}
+
+body:not(.dark-mode) .veille-content p {
+    color: #333;
+}
