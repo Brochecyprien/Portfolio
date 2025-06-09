@@ -5,7 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 
@@ -22,21 +24,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     window.addEventListener("scroll", revealSections);
-    revealSections(); // Pour les sections visibles dès le départ
+    revealSections(); 
+
+    // Animation légère sur les cartes projets
+    const projectCards = document.querySelectorAll(".projet-card");
+    projectCards.forEach(card => {
+        card.addEventListener("mouseenter", () => card.classList.add("hovered"));
+        card.addEventListener("mouseleave", () => card.classList.remove("hovered"));
+    });
 
     // Chargement automatique des projets GitHub
-    fetch("https://api.github.com/users/ton-profil/repos")
+    fetch("https://api.github.com/users/Brochecyprien/repos") // ← Ton pseudo GitHub ici
         .then(response => response.json())
         .then(data => {
             let projectsContainer = document.getElementById("github-projects");
             if (projectsContainer) {
                 data.forEach(repo => {
                     let projectDiv = document.createElement("div");
-                    projectDiv.classList.add("project");
+                    projectDiv.classList.add("projet-card");
                     projectDiv.innerHTML = `
+                        <img src="img/github-placeholder.png" alt="Projet GitHub">
                         <h3>${repo.name}</h3>
-                        <p>${repo.description ? repo.description : "Pas de description."}</p>
-                        <a href="${repo.html_url}" target="_blank">Voir le projet</a>
+                        <p style="padding: 0 10px 10px;">${repo.description || "Aucune description."}</p>
+                        <a href="${repo.html_url}" target="_blank" class="btn">Voir le projet</a>
                     `;
                     projectsContainer.appendChild(projectDiv);
                 });
@@ -50,14 +60,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(toggleDarkMode);
 
     function updateToggleText() {
-        if (document.body.classList.contains("dark-mode")) {
-            toggleDarkMode.textContent = "Mode Clair ☀️";
-        } else {
-            toggleDarkMode.textContent = "Mode Sombre 🌙";
-        }
+        toggleDarkMode.textContent = document.body.classList.contains("dark-mode")
+            ? "Mode Clair ☀️"
+            : "Mode Sombre 🌙";
     }
 
-    // Initialiser le texte
     updateToggleText();
 
     toggleDarkMode.addEventListener("click", function () {
@@ -71,5 +78,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     menuToggle.addEventListener("click", function () {
         navList.classList.toggle("active");
+    });
+
+    // Animation pour la veille technologique
+    const veilleCards = document.querySelectorAll(".veille-card");
+    veilleCards.forEach(card => {
+        card.addEventListener("mouseenter", () => card.classList.add("hovered"));
+        card.addEventListener("mouseleave", () => card.classList.remove("hovered"));
+    });
+});
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        filterButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
     });
 });

@@ -174,32 +174,88 @@ nav {
 .dark-mode-toggle:hover {
     background-color: #e0a874;
 }
+.btn.filter-btn {
+    background-color: #fbd296;
+    color: #000;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn.filter-btn:hover {
+    background-color: #e0a874;
+    color: #000;
+    transform: scale(1.05);
+}
+
+.btn.filter-btn.active {
+    background-color: #000;
+    color: #fbd296;
+    box-shadow: 0 0 0 3px #fbd296 inset;
+}
 
 /* ======================== MODE SOMBRE ======================== */
 .dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #181818;
+    color: #eeeeee;
 }
 
 .dark-mode .section,
 .dark-mode .project,
 .dark-mode .competence,
-.dark-mode .contact-item {
-    background-color: #1f1f1f;
+.dark-mode .contact-item,
+.dark-mode .formation,
+.dark-mode .timeline-item,
+.dark-mode .about-card,
+.dark-mode .card-bts {
+    background-color: #222222;
+    color: #eeeeee;
+}
+
+.dark-mode .timeline-date {
+    background-color: #2a2a2a;
+    color: #fbd296;
+}
+
+.dark-mode .modules li {
+    background-color: #292929;
+}
+
+.dark-mode .modules li strong {
+    color: #ffffff;
 }
 
 /* ======================== MODE CLAIR ======================== */
 body:not(.dark-mode) {
+    background-color: #f4f4f4;
+    color: #222222;
+}
+
+body:not(.dark-mode) nav {
     background-color: #ffffff;
-    color: #111111;
+}
+
+body:not(.dark-mode) .nav-list li a {
+    color: #333;
 }
 
 body:not(.dark-mode) .section,
 body:not(.dark-mode) .project,
 body:not(.dark-mode) .competence,
-body:not(.dark-mode) .contact-item {
+body:not(.dark-mode) .contact-item,
+body:not(.dark-mode) .formation,
+body:not(.dark-mode) .timeline-item,
+body:not(.dark-mode) .about-card,
+body:not(.dark-mode) .card-bts {
     background-color: #ffffff;
-    color: #111111;
+    color: #222222;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 body:not(.dark-mode) .btn {
@@ -208,7 +264,7 @@ body:not(.dark-mode) .btn {
 }
 
 body:not(.dark-mode) .btn:hover {
-    background-color: #e0a874;
+    background-color: #f0ad4e;
 }
 
 body:not(.dark-mode) .btn-group .btn {
@@ -221,34 +277,25 @@ body:not(.dark-mode) .btn-group .btn:hover {
 }
 
 body:not(.dark-mode) .dark-mode-toggle {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #111;
+    color: #fff;
 }
 
 body:not(.dark-mode) .dark-mode-toggle:hover {
-    background-color: #333333;
-}
-
-body:not(.dark-mode) .timeline-item,
-body:not(.dark-mode) .formation,
-body:not(.dark-mode) .about-card,
-body:not(.dark-mode) .card-bts {
-    background-color: #f9f9f9;
-    color: #111111;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #333;
 }
 
 body:not(.dark-mode) .timeline-date {
-    background-color: #dddddd;
-    color: #000000;
+    background-color: #ececec;
+    color: #333;
 }
 
 body:not(.dark-mode) .modules li {
-    background-color: #eeeeee;
+    background-color: #f0f0f0;
 }
 
 body:not(.dark-mode) .modules li strong {
-    color: #000000;
+    color: #111;
 }
 /* ======================== Transition douce entre modes sombre/claire ======================== */
 body, .section, .project, .competence, .contact-item, .formation, .timeline-item, .about-card, .card-bts, nav {
@@ -495,31 +542,46 @@ footer {
 }
 
 /* ======================== CARTE BTS SIO ======================== */
-.card-bts {
-    background-color: #222;
-    padding: 30px;
-    border-radius: 15px;
-    max-width: 900px;
-    margin: 0 auto;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+.bts-sio-info {
     text-align: left;
+    background-color: #222;
+    border-radius: 15px;
+    padding: 40px 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    color: #f0f0f0;
+    line-height: 1.7;
 }
-.card-bts h2, .card-bts h3 {
+
+.bts-sio-info h2 {
     color: #fbd296;
+    margin-bottom: 20px;
+}
+
+.bts-sio-info h3 {
+    color: #ffcc80;
+    margin-top: 30px;
     margin-bottom: 15px;
 }
-.card-bts p {
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: #ddd;
-}
-.bts-options {
+
+.bts-sio-info ul {
     list-style-type: disc;
     padding-left: 20px;
-    color: #ccc;
 }
-.bts-options li {
-    margin-bottom: 10px;
+
+.bts-sio-info ul li {
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.bts-sio-info strong {
+    color: #ffe0a3;
+}
+
+.bts-sio-info em {
+    color: #ccc;
+    font-style: italic;
 }
 
 /* ======================== À PROPOS (PHOTO + TEXTE) ======================== */
@@ -671,4 +733,32 @@ body:not(.dark-mode) .veille-content h3 {
 
 body:not(.dark-mode) .veille-content p {
     color: #333;
+}
+/* ======================== Services ======================== */
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-card {
+  background-color: #222;
+  padding: 25px;
+  width: 280px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.service-card i {
+  font-size: 36px;
+  color: #fbd296;
+  margin-bottom: 15px;
 }
