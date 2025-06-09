@@ -824,21 +824,3 @@ body:not(.dark-mode) .veille-content p {
 }
 
 /* ======================== FIN MISE EN AVANT SLAM ======================== */
-.highlight-slam {
-    background-color: #fff3c4; /* jaune pâle */
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    color: #111; /* texte noir foncé */
-    font-weight: normal;
-}
-
-.highlight-slam em {
-    font-style: italic;
-    color: #333; /* texte plus lisible */
-    font-weight: 500;
-}
-
-.highlight-slam strong {
-    color: #000; /* noir pour les titres comme "SLAM" ou "Débouchés" */
-}
