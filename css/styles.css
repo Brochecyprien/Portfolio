@@ -762,3 +762,83 @@ body:not(.dark-mode) .veille-content p {
   color: #fbd296;
   margin-bottom: 15px;
 }
+/* ======================== MISE EN AVANT DE L'OPTION SLAM ======================== */
+
+.bts-highlight {
+    background-color: #fbd296;
+    color: #000;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.badge-option {
+    background-color: #fbd296;
+    color: #000;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Badge SLAM dans les cartes de projets */
+.project-tag {
+    background-color: #fbd296;
+    color: #000;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.projet-card {
+    position: relative;
+}
+
+/* Icône devant le titre SLAM */
+.slam-icon {
+    font-size: 1.2em;
+    margin-right: 5px;
+    color: #fbd296;
+}
+
+/* Assure une bonne intégration dans les blocs textes */
+.bts-sio-info .bts-highlight {
+    margin-left: 5px;
+} 
+
+.about-content .badge-option {
+    margin-top: 15px;
+}
+
+/* Assure que les projets SLAM soient cohérents */
+.projet-card h3 {
+    margin-top: 10px;
+    color: #fbd296;
+}
+
+/* ======================== FIN MISE EN AVANT SLAM ======================== */
+.highlight-slam {
+    background-color: #fff3c4; /* jaune pâle */
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: #111; /* texte noir foncé */
+    font-weight: normal;
+}
+
+.highlight-slam em {
+    font-style: italic;
+    color: #333; /* texte plus lisible */
+    font-weight: 500;
+}
+
+.highlight-slam strong {
+    color: #000; /* noir pour les titres comme "SLAM" ou "Débouchés" */
+}
